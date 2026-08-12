@@ -47,6 +47,9 @@ data = """order_id,product_id,promotion_id,currency,order_value,order_date,origi
 df = pd.read_csv(io.StringIO(data))
 df.to_csv("sales_data_missing.csv", index=False)
 
+# ==========================
+# Solution
+# ==========================
 import pandas as pd
 
 # Load the data 
@@ -84,3 +87,15 @@ final_df = merged_df[final_cols]
 final_df = final_df.to_numpy()
 
 print(final_df[:5])
+
+
+# =====================
+# Expected output 
+# =====================
+"""
+[[1001 'P101' 'PROMO_A' 630.5 700.0]
+ [1002 'P102' 'No Promotion' 295.0 430.0]
+ [1003 'P101' 'PROMO_B' 630.5 700.0]
+ [1004 'P103' 'No Promotion' 105.25 175.0]
+ [1005 'P102' 'PROMO_A' 295.0 430.0]]
+"""
